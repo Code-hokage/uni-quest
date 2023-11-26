@@ -229,7 +229,7 @@ nav .menu .menuIcon {
     backdrop-filter: blur(15px);
     padding: 1rem 1rem;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 
   nav .logo a {
@@ -452,7 +452,7 @@ figure.stage .arrow {
 .showContent {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
@@ -638,7 +638,7 @@ figure.stage .arrow {
   background-size: cover;
   padding: 13rem 4rem 4rem 4rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: end;
   gap: 3rem;
 }
@@ -1048,7 +1048,7 @@ section .subjectsCombination{
 section .subjectsCombination .subjects{
   padding: 0.8rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   gap: 4rem;
 }
 
@@ -1074,7 +1074,7 @@ footer {
 .footer {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   font-size: 0.9rem;
   padding: 2rem 4rem;
