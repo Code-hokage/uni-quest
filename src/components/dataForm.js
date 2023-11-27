@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { formDb } from "../data/db"
 import FormReview from "./formReview";
-import { formDb } from "../data/db";
 const DataForm = () => {
     const [formData, setFormData] = useState({
         course: "",
