@@ -60,9 +60,6 @@ const DataForm = () => {
 
     useEffect(() => {
         // Fetching course data
-        fetch("http://localhost:8000/formDb")
-            .then((res) => res.json())
-            .then((formDb) => {
 
         setCourses(formDb.courses);
         setCoreSubjects(formDb.coreSubjects);
@@ -74,10 +71,7 @@ const DataForm = () => {
                     ...prevData,
                     electiveSubjects: prevData.electiveSubjects.map(() => ({ subject: "", grade: "" })),
                 }));
-            })
-            .catch((error) =>
-                console.error("Error fetching course data:", error)
-            );
+                
     }, [formData.course]);
 
 
