@@ -648,7 +648,7 @@ nav .menu .menuIcon {
   }
   
   .home {
-    height: 100vh;
+    height: 80vh;
   }
 
   .landing {
@@ -737,6 +737,12 @@ nav .menu .menuIcon {
     background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(23, 67, 97, 0.8));
   }
 
+  .layer h4 {
+    background: transparent;
+    color: #fff;
+    padding: 0.3rem 0;
+  }
+
   .layer p {
     width: 80%;
     bottom: 20%;
@@ -754,7 +760,7 @@ nav .menu .menuIcon {
 
   .cta {
     width: 100%;
-    padding: 3rem 0;
+    padding: 3rem 0.3rem;
   }
 
   .cta div {
