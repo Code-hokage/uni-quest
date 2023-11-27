@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { formDb } from "../data/db"
 import FormReview from "./formReview";
 
 const DataForm = () => {
@@ -60,24 +61,20 @@ const DataForm = () => {
 
     useEffect(() => {
         // Fetching course data
-        fetch("http://localhost:8000/formDb")
-            .then((res) => res.json())
-            .then((formDb) => {
+        setCourses(formDb.courses);
+        setCoreSubjects(formDb.coreSubjects);
+        setCourseContent(formDb.courseContent);
+        setGrades(formDb.grades);
 
-                setCourses(formDb.courses);
-                setCoreSubjects(formDb.coreSubjects);
-                setCourseContent(formDb.courseContent);
-                setGrades(formDb.grades);
+        // Clear subjects when the course changes
+        setFormData((prevData) => ({
+            ...prevData,
+            electiveSubjects: prevData.electiveSubjects.map(() => ({
+                subject: "",
+                grade: "",
+            })),
+        }));
 
-                // Clear subjects when the course changes
-                setFormData((prevData) => ({
-                    ...prevData,
-                    electiveSubjects: prevData.electiveSubjects.map(() => ({ subject: "", grade: "" })),
-                }));
-            })
-            .catch((error) =>
-                console.error("Error fetching course data:", error)
-            );
     }, [formData.course]);
 
 
@@ -106,7 +103,7 @@ const DataForm = () => {
 
                         <div className="formInput">
                             <label htmlFor="course">
-                                <strong>1. Course</strong>
+                                <p>1. Course</p>
                             </label>
 
                             <select
@@ -132,11 +129,11 @@ const DataForm = () => {
 
                         <div className="formInput">
                             <label htmlFor="subjects">
-                                <strong>2. Subjects and Grades</strong>
+                                <p>2. Subjects and Grades</p>
                             </label>
 
                             {/* Core subjects */}
-                            <strong>Core subjects</strong>
+                            <p className="coAndEl">Core subjects</p>
                             <div className="subjects">
                                 {formData.coreSubjects && formData.coreSubjects.slice(0, 3).map((subject, index) => (
                                     <div className="subject" key={index}>
@@ -175,7 +172,7 @@ const DataForm = () => {
                             {/* Elective subjects */}
                             {formData.course && (
                                 <>
-                                    <strong>Elective subjects</strong>
+                                    <p className="coAndEl">Elective subjects</p>
                                     <div className="subjects">
                                         {formData.electiveSubjects && formData.electiveSubjects.slice(0, 3).map((subject, index) => (
                                             <div className="subject" key={index}>

@@ -21,8 +21,10 @@ const Home = () => {
 
                             <div className="herotext">
                                 <p>With countless universities to choose from, the decision can be daunting. We
-                                    simplify the process by matching your profile to universities that align with your academic achievements and career goals. Discover institutions that will nurture your potential.
+                                    simplify the process by matching your profile to universities that align with your academic achievements and career goals.
                                 </p>
+
+                                <h1>Explore Your Ideal Universities. Discover the Perfect Program</h1>
                             </div>
 
                             <div className="toform">
@@ -87,28 +89,32 @@ const Home = () => {
 
                 <div class="showContent">
                     <div class="showCase-col">
-                        <img src="/images/career-changer.jpg" />
+                        <div className="caseImg recomm"></div>
+                        {/* <img src="/images/recommPs.jpg" alt="pic" /> */}
                         <div class="layer">
                             <h4>Personalized Recommendations</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
                         </div>
                     </div>
                     <div class="showCase-col">
-                        <img src="/images/career-changer.jpg" />
+                        {/* <img src="/images/perfectPs.jpg" alt="pic" /> */}
+                        <div className="caseImg perfectPs"></div>
                         <div class="layer">
                             <h4>Discover the Perfect Program</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
                         </div>
                     </div>
                     <div class="showCase-col">
-                        <img src="/images/career-changer.jpg" />
+                        {/* <img src="/images/idealUni.jpg" alt="pic" /> */}
+                        <div className="caseImg idealUni"></div>
                         <div class="layer">
                             <h4>Explore Your Ideal Universities</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>
                         </div>
                     </div>
                     <div class="showCase-col">
-                        <img src="/images/career-changer.jpg" />
+                        {/* <img src="/images/guidance.jpg" alt="pic" /> */}
+                        <div className="caseImg guidance"></div>
                         <div class="layer">
                             <h4>Guidance at Every Step</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem reprehenderit magni repellendus dolores? Culpa sit itaque facilis nulla doloremque perferendis!</p>

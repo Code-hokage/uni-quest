@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./components/home";
 import DataForm from "./components/dataForm";
-import Programs from "./components/programs";
-import Program from "./components/program";
+import Programs from "./components/Programs_page/mainProgramsPage";
+import Program from "./components/individualProgram";
 import SharedLayout from "./sharedLayout";
 
 

@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
-  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -354,6 +353,10 @@ nav .menu .menuIcon {
   width: 80%;
 }
 
+.herotext h1{
+  display: none;
+}
+
 .toform {
   position: relative;
   text-align: center;
@@ -369,7 +372,6 @@ nav .menu .menuIcon {
 /* explore stages */
 .exploreStages {
   width: 100vw;
-  padding: 1rem;
   background: #fff;
   color: #000 !important;
 }
@@ -471,12 +473,38 @@ nav .menu .menuIcon {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  background-position: center;
+  background-size: cover;
 }
 
+.showCase-col .caseImg{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.showCase-col .recomm{
+  background-image: url(/public/images/recommPs.jpg);
+}
+
+.showCase-col .perfectPs{
+  background-image: url(/public/images/perfectPs.jpg);
+}
+
+.showCase-col .idealUni{
+  background-image: url(/public/images/idealUni.jpg);
+}
+
+.showCase-col .guidance{
+  background-image: url(/public/images/guidance.jpg);
+}
+
+/* 
 .showCase-col img {
   width: 100%;
   display: block;
-}
+} */
 
 .layer {
   background: transparent;
@@ -489,8 +517,14 @@ nav .menu .menuIcon {
   transition: 0.5s;
 }
 
+.layer h4 {
+  background: rgba(26, 26, 26, 0.6);
+  color: #fff;
+  padding: 0.3rem 0;
+}
+
 .layer:hover {
-  background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(226, 0, 0, 0.7));
+  background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(23, 67, 97, 0.8));
 }
 
 .layer p {
@@ -510,7 +544,7 @@ nav .menu .menuIcon {
   opacity: 1;
 }
 
-.showCase-col:hover img {
+.showCase-col:hover .caseImg {
   transform: scale(1.1);
   transition: 0.5s;
 }
@@ -567,18 +601,34 @@ nav .menu .menuIcon {
   }
 
   /* explore stages */
-  .exploreStages {
-    padding: 0;
-  }
-
   .stages {
+    padding: 1rem;
     gap: 2rem;
   }
 
   .stage {
-    min-width: 40vw;
-    max-width: 45vw;
     width: 100%;
+    height: 30vh;
+  }
+
+  /*------showCase-------*/
+  .showCase-col {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .layer {
+    background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(23, 67, 97, 0.8));
+  }
+
+  .layer p {
+    width: 80%;
+    bottom: 30%;
+    opacity: 1;
+  }
+
+  .layer:hover p {
+    bottom: 30%;
   }
 
   /*------call to action------*/
@@ -587,12 +637,16 @@ nav .menu .menuIcon {
   }
 
   .cta {
-    width: 90%;
+    width: 95%;
     padding: 5rem 0;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
+  * {
+    letter-spacing: 0px;
+  }
+  
   .home {
     height: 100vh;
   }
@@ -614,6 +668,10 @@ nav .menu .menuIcon {
     gap: 2rem;
   }
 
+  .heroheading h1{
+    display: none;
+  }
+
   .heroContent {
     width: 100%;
   }
@@ -622,37 +680,71 @@ nav .menu .menuIcon {
     width: 100%;
   }
 
+  .herotext p{
+    display: none;
+  }
+
+  .herotext h1{
+    display: flex;
+  }
+
   .toform {
     padding: 1rem;
   }
 
   /* explore stages */
-  .exploreStages {
-    padding: 1rem;
-  }
-
   .stages {
-    gap: 1rem;
+    padding: 0.3rem;
+    gap: 2rem;
   }
 
   .stage {
-    min-width: 95vw;
-    max-width: 98vw;
     width: 100%;
+    height: 20vh;
   }
 
   .stage .stageCap {
-    padding: 0.5rem;
+    width: 60%;
+    padding: 0.3rem;
   }
 
-  /* case */
-  .showContent {
-    gap: 2rem;
-    padding: 8rem 1rem;
+  .stage .stageCap h4{
+    font-size: 1rem;
+  }
+  
+  .stage .stageImg {
+    width: 40%;
   }
 
-  .caseBox {
+  .stage .arrow {
+    top: 100px;
+  }
+
+
+  /*------showCase-------*/
+  .showCase-col {
     width: 100%;
+    height: 40vh;
+  }
+
+  .showCase-col img {
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+
+  .layer {
+    background-image: linear-gradient(rgba(226, 0, 0, 0.1), rgba(23, 67, 97, 0.8));
+  }
+
+  .layer p {
+    width: 80%;
+    bottom: 20%;
+    opacity: 1;
+  }
+
+  .layer:hover p {
+    bottom: 30%;
   }
 
   /*------call to action------*/
@@ -717,19 +809,32 @@ form h2 {
 }
 
 .formInput {
-  padding: 1rem 0;
+  width: 100%;
+  padding:  0  0 2rem 0;
 }
 
-form label {
-  display: block;
-  font-size: 1rem;
-  padding-bottom: 0.4rem;
+.formInput label p{
+  font-size: 1.2rem;
+}
+
+.formInput .coAndEl{
+  color: var(--secondaryColor);
+}
+
+select.choice {
+  width: 95%;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 0.3rem;
+  border-radius: 10px;
+  outline: none;
+  /* border: 2px solid crimson; */
 }
 
 .subjects {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
 }
 
 .subject {
@@ -739,14 +844,14 @@ form label {
 }
 
 form select option {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 select.subInput {
   width: 60%;
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 40%);
-  padding: 0.4rem;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 0.3rem;
   border-radius: 10px;
   outline: none;
 }
@@ -755,20 +860,11 @@ select.grade {
   width: 25%;
   background: transparent;
   border: 2px solid rgba(0, 0, 0, 40%);
-  padding: 0.4rem;
+  padding: 0.3rem;
   border-radius: 10px;
   outline: none;
   display: inline;
   text-align: center;
-}
-
-select.choice {
-  width: 95%;
-  background: transparent;
-  border: 2px solid rgba(0, 0, 0, 40%);
-  padding: 0.4rem;
-  border-radius: 10px;
-  outline: none;
 }
 
 .toRev {
@@ -787,71 +883,97 @@ select.choice {
 
   .formPage .note {
     width: 35%;
-    padding: 1rem;
+    padding: 0rem;
   }
 
   .formContainer {
     width: 65%;
   }
 
+  select.choice {
+    width: 95%;
+  }
+
   .sujects {
     width: 100%;
   }
 
   .subject {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .subInput {
-    width: 60%;
+    width: 65%;
   }
 
   select.grade {
     width: 25%;
   }
 
-  select.choice {
-    width: 95%;
-  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .formPage {
-    padding: 13rem 1rem 3rem 1rem;
+    padding: 10rem 1rem 4rem 1rem;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
   }
-
+  
   .formPage .note {
     width: 100%;
-    padding: 0;
+    padding: 0rem;
   }
 
+  .formPage .note p{
+    display: none;
+  }
+  
   .formContainer {
     width: 100%;
   }
-
+  
   form {
-    padding: 1rem;
+    padding: 0.7rem;
+    font-size: 0.8rem;
   }
-
-  .sujects {
+  
+  .formInput label p{
+    font-size: 1rem;
+  }
+  
+  select.choice {
+    width: 100%;
+    padding: 0.2rem;
+  }
+  
+  .subjects {
+    display: flex;
+    flex-direction: column;
     width: 100%;
   }
-
+  
   .subject {
-    gap: 1rem;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
   }
-
-  .subInput {
-    width: 70%;
+  
+  form select option {
+    font-size: 0.9rem;
   }
-
+  
+  select.subInput {
+    width: 75%;
+    padding: 0.2rem;
+  }
+  
   select.grade {
-    width: 30%;
+    width: 25%;
+    padding: 0.2rem;
+    text-align: center;
   }
+  
 }
 
 
@@ -925,12 +1047,7 @@ select.choice {
 
 
 /* programs */
-.programsContainer {
-  position: relative;
-  width: 100vw;
-}
-
-.programsContainer .title {
+.programstitle {
   width: 100%;
   text-align: center;
   font-weight: 600;
@@ -941,13 +1058,14 @@ select.choice {
   background-position: center;
   background-size: cover;
   color: #fff;
+  /* z-index: 10; */
 }
 
-.programsMain {
-  position: relative;
+.progMain {
   width: 100%;
   display: flex;
 }
+
 
 .programsFilter {
   width: 25%;
@@ -955,8 +1073,13 @@ select.choice {
   background: var(--secondaryColor);
 }
 
+.stickyBox {
+  position: sticky;
+}
+
 .allPrograms {
   width: 75%;
+  right: 0;
   padding-left: 3rem;
 }
 
@@ -1003,7 +1126,7 @@ select.choice {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.7rem;
+  gap: 0.5rem;
 }
 
 
