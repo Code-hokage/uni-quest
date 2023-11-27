@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { formDb } from "../data/db"
 import FormReview from "./formReview";
-
+import { formDb } from "../data/db";
 const DataForm = () => {
     const [formData, setFormData] = useState({
         course: "",
@@ -61,20 +61,24 @@ const DataForm = () => {
 
     useEffect(() => {
         // Fetching course data
-        setCourses(formDb.courses);
-        setCoreSubjects(formDb.coreSubjects);
-        setCourseContent(formDb.courseContent);
-        setGrades(formDb.grades);
+        fetch("http://localhost:8000/formDb")
+            .then((res) => res.json())
+            .then((formDb) => {
 
-        // Clear subjects when the course changes
-        setFormData((prevData) => ({
-            ...prevData,
-            electiveSubjects: prevData.electiveSubjects.map(() => ({
-                subject: "",
-                grade: "",
-            })),
-        }));
+                setCourses(formDb.courses);
+                setCoreSubjects(formDb.coreSubjects);
+                setCourseContent(formDb.courseContent);
+                setGrades(formDb.grades);
 
+                // Clear subjects when the course changes
+                setFormData((prevData) => ({
+                    ...prevData,
+                    electiveSubjects: prevData.electiveSubjects.map(() => ({ subject: "", grade: "" })),
+                }));
+            })
+            .catch((error) =>
+                console.error("Error fetching course data:", error)
+            );
     }, [formData.course]);
 
 
